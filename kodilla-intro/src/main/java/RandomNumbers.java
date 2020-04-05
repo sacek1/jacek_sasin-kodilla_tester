@@ -1,20 +1,29 @@
 import java.util.Random;
 
 public class RandomNumbers {
-    public static int getCountOfRandomNumber(int max) {
+    public static int[] calculateRandomNumbers(int max) {
         Random random = new Random();
-        int result = 0;
+        int totalMin = max;
+        int totalMax = 0;
         int sum = 0;
         while (sum < max) {
             int temp = random.nextInt(31);
             sum = sum + temp;
-            result++;
+            if (temp < totalMin) {
+                totalMin = temp;
+            } else {}
+
+            if (temp > totalMax) {
+                totalMax = temp;
+            } else {}
+
         }
-        return result;
+
+        int[] getUserStatistics = new int[] {totalMin, totalMax};
+
+        return getUserStatistics;
+
     }
 
-public void main(String[] args) {
-    System.out.println(RandomNumbers.getCountOfRandomNumber(5000));
 
-
-}}
+}
