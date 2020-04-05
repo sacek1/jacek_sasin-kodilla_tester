@@ -2,7 +2,8 @@ package com.kodilla.inheritance;
 
 public class Convertible extends Car {
 
-    public Convertible() {
+    public Convertible(int wheels, int seats) {
+        super(wheels, seats);
         System.out.println("Convertible constructor");
     }
 
