@@ -3,13 +3,13 @@ package com.kodilla.abstracts.homework;
 public class Application {
     public static void main(String[] args) {
 
-        Square square = new Square(40);
-        Rectangle rectangle = new Rectangle(10, 20);
+        Shape square = new Square(30);
+        Shape rectangle = new Rectangle(10, 20);
 
-        square.calculateArea();
-        rectangle.calculateArea();
+        Shape[] shapes = new Shape[] {square, rectangle};
 
-        square.calculateCircumference();
-        rectangle.calculateCircumference();
+        for (int i = 0; i < shapes.length; i++) {
+            System.out.println(shapes[i].toString());
+        }
     }
 }

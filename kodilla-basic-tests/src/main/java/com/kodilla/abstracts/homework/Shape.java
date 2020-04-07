@@ -2,16 +2,22 @@ package com.kodilla.abstracts.homework;
 
 public abstract class Shape {
 
-    private int area;
-    private int circumference;
+    protected int area;
+    protected int circumference;
 
-    public Shape (int area, int circumference) {
-    this.area = area;
-    this.circumference = circumference;
+    protected int getArea() {
+        return area;
     }
 
+    protected int getCircumference() {
+        return circumference;
+    }
 
-    public abstract void calculateArea();
-    public abstract void calculateCircumference();
-
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "area=" + area +
+                ", circumference=" + circumference +
+                '}';
+    }
 }
