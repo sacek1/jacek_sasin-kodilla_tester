@@ -4,60 +4,69 @@ public class CashMachine {
 
     private int[] deposits;
     private int[] withdrawals;
-    private int depositSum;
-    private int withdrawalSum;
-    private int depositNumber;
-    private int withdrawalNumber;
 
     public CashMachine() {
-        this.depositSum = 0;
-        this.withdrawalSum = 0;
-        this.depositNumber = 0;
-        this.withdrawalNumber = 0;
         this.deposits = new int[0];
         this.withdrawals = new int[0];
     }
 
     public void deposit(int value) {
-        this.depositNumber++;
-        int[] newTab = new int[this.depositNumber];
-        System.arraycopy(deposits, 0, newTab, 0, deposits.length);
-        newTab[this.depositNumber - 1] = value;
-        this.deposits = newTab;
-        depositSum = depositSum + value;
+        if (value > 0 && value <= 4000 && value % 10 == 0) {
+            int[] newTab = new int[deposits.length + 1];
+            System.arraycopy(deposits, 0, newTab, 0, deposits.length);
+            newTab[newTab.length - 1] = value;
+            this.deposits = newTab;
+        }
     }
 
     public void withdrawal(int value) {
-        this.withdrawalNumber++;
-        int[] newTab = new int[this.withdrawalNumber];
-        System.arraycopy(withdrawals, 0, newTab, 0, withdrawals.length);
-        newTab[this.withdrawalNumber - 1] = value;
-        this.withdrawals = newTab;
-        withdrawalSum = withdrawalSum + value;
+        if (value > 0 && value <= 4000 && value % 10 == 0) {
+            int[] newTab = new int[withdrawals.length + 1];
+            System.arraycopy(withdrawals, 0, newTab, 0, withdrawals.length);
+            newTab[newTab.length - 1] = value;
+            this.withdrawals = newTab;
+        }
     }
 
-    public int[] getDeposits() {return deposits;}
+    public int[] getDeposits() {
+        return deposits;
+    }
 
-    public int[] getWithdrawals() {return withdrawals;}
+    public int[] getWithdrawals() {
+        return withdrawals;
+    }
 
-    public int getDepositNumber() {return depositNumber;}
+    public int getDepositNumber() {
+        return deposits.length;
+    }
 
-    public int getWithdrawalNumber() {return withdrawalNumber;}
+    public int getWithdrawalNumber() {
+        return withdrawals.length;
+    }
 
     public int getBalance() {
         if (this.deposits.length == 0 && this.withdrawals.length == 0) {
             return 0;
         }
 
-        int balance = 0;
-        balance = depositSum - withdrawalSum;
-
-        return balance;
+        return getDepositSum() - getWithdrawalSum();
     }
 
-    public int getDepositSum() {return depositSum;}
+    public int getDepositSum() {
+        int s = 0;
+        for (int i = 0; i < deposits.length; i++) {
+            s += deposits[i];
+        }
+        return s;
+    }
 
-    public int getWithdrawalSum() {return withdrawalSum;}
+    public int getWithdrawalSum() {
+        int s = 0;
+        for (int i = 0; i < withdrawals.length; i++) {
+            s += withdrawals[i];
+        }
+        return s;
+    }
 
 
 }
