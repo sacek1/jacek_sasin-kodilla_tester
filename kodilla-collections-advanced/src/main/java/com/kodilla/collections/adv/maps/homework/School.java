@@ -5,16 +5,26 @@ import java.util.List;
 
 public class School {
     private List<Integer> classSizes = new ArrayList<>();
+    private int sum;
+    private String name;
 
-    public School(int ... classSizes) {
-        for (int classSize : classSizes)
+    public School(String name, int... classSizes) {
+        this.name = name;
+        for (int classSize : classSizes) {
             this.classSizes.add(classSize);
+            sum = sum + classSize;
+        }
     }
 
+    // alternatywa niekoniecznie zawsze dobra
     public int schoolSize() {
-        int sum = 0;
-        for (int i : classSizes)
-            sum = sum + i;
         return sum;
+    }
+
+    @Override
+    public String toString() {
+        return "School{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }

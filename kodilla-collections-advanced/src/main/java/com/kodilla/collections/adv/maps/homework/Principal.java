@@ -27,4 +27,12 @@ public class Principal {
 
     public String getFirstname() { return firstname;}
     public String getLastname() { return lastname;}
+
+    @Override
+    public String toString() {
+        return "Principal{" +
+                "firstname='" + firstname + '\'' +
+                ", lastname='" + lastname + '\'' +
+                '}';
+    }
 }
