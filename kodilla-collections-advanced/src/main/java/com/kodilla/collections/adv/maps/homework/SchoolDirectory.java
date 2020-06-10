@@ -9,7 +9,7 @@ public class SchoolDirectory {
 
         Principal kowalski = new Principal("Tadeusz", "Kowalski");
         Principal nowak = new Principal("Adam", "Nowak");
-        Principal jelen = new Principal("Zbigniew", "Jelen");
+        Principal jelen = new Principal("Zbigniew", "Jelen");   
 
         School kowalskiSchool = new School(15, 25, 30, 14, 19);
         School nowakSchool = new School(20, 21, 24, 19, 20);
