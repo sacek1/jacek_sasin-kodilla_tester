@@ -8,7 +8,7 @@ public class FlightFinder extends FlightRepository {
     public List<Flight> findFlightsFrom(String departure) {
         List<Flight> depFrom = new ArrayList<>();
         for(int i = 0; i < flightList.size(); i++) {
-            if (flightList.get(i).getDeparture() == departure) {
+            if (flightList.get(i).getDeparture().equalsIgnoreCase(departure)) {
                 depFrom.add(flightList.get(i));
             }
         }

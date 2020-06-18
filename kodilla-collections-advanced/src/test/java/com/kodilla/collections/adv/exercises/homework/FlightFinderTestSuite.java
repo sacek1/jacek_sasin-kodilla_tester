@@ -13,11 +13,11 @@ class FlightFinderTestSuite {
     public void testFindFlightsFrom() {
         //given
         FlightFinder flightFinder = new FlightFinder();
-        List<Flight> findFlightsFrom = new ArrayList<>();
         //when
         Flight f001 = flightFinder.addFlight("Warsaw", "Moscow");
         //then
-        assertEquals(1, findFlightsFrom.size());
+        assertEquals(1, flightFinder.flightList.size());
+        assertEquals(f001, flightFinder.flightList.get(0));
     }
 }
 

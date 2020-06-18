@@ -5,8 +5,6 @@ public class FlightApplication {
 
         FlightFinder flightFinder = new FlightFinder();
 
-
-
         Flight f001 = flightFinder.addFlight("Warsaw", "London");
         flightFinder.showFlightList();
         Flight f002 = flightFinder.addFlight("Paris", "Madrid");
