@@ -1,19 +1,29 @@
 package com.kodilla.abstracts.homework;
 
 public class Person {
-    public static void main(String[] args) {
+    private String firstName;
+    private int age;
+    public Job job;
 
-        Operator operator = new Operator(4000);
-        Coordinator coordinator = new Coordinator(8000);
-        Storekeeper storekeeper = new Storekeeper(4500);
+    public Person(String firstName, int age, Job job) {
+        this.firstName = firstName;
+        this.age = age;
+    }
 
-        coordinator.showSalary();
-        coordinator.showResponsibilities();
+    public String getFirstName() {
+        return firstName;
+    }
 
-        storekeeper.showSalary();
-        storekeeper.showResponsibilities();
+    public int getAge() {
+        return age;
+    }
 
-        operator.showSalary();
-        operator.showResponsibilities();
+    @Override
+    public String toString() {
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", age=" + age +
+                ", job=" + job +
+                '}';
     }
 }
