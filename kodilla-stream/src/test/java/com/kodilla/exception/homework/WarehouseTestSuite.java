@@ -3,8 +3,11 @@ package com.kodilla.exception.homework;
 import com.kodilla.exception.AirportNotFoundException;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 public class WarehouseTestSuite {
@@ -13,11 +16,15 @@ public class WarehouseTestSuite {
     public void testGetOrder() throws OrderDoesntExistException {
         //given
         Warehouse warehouse = new Warehouse();
+        warehouse.addOrder(new Order("234"));
         //when
         Order isOrder234 = warehouse.getOrder("234");
         //then
-        assertEquals("Order{number='234'}", isOrder234);
+        List<String> expected = Arrays.asList("234");
+        assertThat(isOrder234, is(expected));
     }
+
+
 
     @Test(expected = OrderDoesntExistException.class)
     public void testGetOrder_withException() throws OrderDoesntExistException {
@@ -26,7 +33,7 @@ public class WarehouseTestSuite {
         //when
         Order isOrder888 = warehouse.getOrder("888");
         //then
-        assertEquals("Order{number='888'}", isOrder888);
+
     }
 
 }
