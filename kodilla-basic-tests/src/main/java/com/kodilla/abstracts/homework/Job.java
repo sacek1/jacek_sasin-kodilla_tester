@@ -21,4 +21,8 @@ public void giveResponsibilities() {
     System.out.println(getResponsibilities());
 }
 
+    @Override
+    public String toString() {
+        return getResponsibilities();
+    }
 }
