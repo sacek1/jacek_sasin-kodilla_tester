@@ -15,14 +15,15 @@ public class Warehouse {
         orders.add(number);
     }
 
-    public boolean getOrder(String number) throws OrderDoesntExistException {
-        List<Order> ordersList = orders
+    public Order getOrder(String number) throws OrderDoesntExistException {
+//        List<Order> ordersList = orders
+        return orders
                 .stream()
                 .filter(u -> u.getNumber().equals(number))
-                .collect(Collectors.toList());
+                .findFirst().orElseThrow(OrderDoesntExistException::new);
 
-        if (ordersList.contains(number))
-            return getOrder(number);
-        throw new OrderDoesntExistException();
+//        if (ordersList.contains(number))
+//            return getOrder(number);
+//        throw new OrderDoesntExistException();
     }
 }
