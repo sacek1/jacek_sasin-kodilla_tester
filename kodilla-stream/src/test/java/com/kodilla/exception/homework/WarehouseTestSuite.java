@@ -21,7 +21,7 @@ public class WarehouseTestSuite {
         Order isOrder234 = warehouse.getOrder("234");
         //then
         List<String> expected = Arrays.asList("234");
-        assertThat(isOrder234, is(expected));
+        assertThat("234", is(isOrder234.getNumber()));
     }
 
 
