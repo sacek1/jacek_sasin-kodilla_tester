@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 
 public class UsersManager {
     public static void main(String[] args) {
-        List<String> userNames = UserRepository.getUserList()
+        List<String> userNames = UsersRepository.getUserList()
                 .stream()
                 .filter(u -> u.getGroup().equals("Chemists"))
                 .map(UsersManager::getUserName)

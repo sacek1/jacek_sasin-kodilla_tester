@@ -9,7 +9,6 @@ public class Application {
         List<Student> students = new ArrayList<>();
         Teacher pesla = new Teacher("Nikolas Pesla");
         Teacher hud = new Teacher("Mrowin Hud");
-        Teacher undefined = new Teacher("<undefined>");
         students.add(new Student("Mikolaj Nowak", pesla));
         students.add(new Student("Simon Limon", null));
         students.add(new Student("Ana Comito", pesla));
@@ -21,8 +20,7 @@ public class Application {
 
 
         for (Student student : students) {
-            Optional<Student> optionalStudent = Optional.ofNullable(null);
-            optionalStudent.orElse(new Teacher("<undefined>").;
+            String teacher = Optional.ofNullable(student.getTeacher()).map(t -> t.getName()).orElse("<undefined>");
             System.out.println("uczeń: " + student.getName() + ", nauczyciel: " + student.getTeacher());
         }
 
