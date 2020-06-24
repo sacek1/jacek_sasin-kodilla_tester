@@ -5,28 +5,20 @@ public class Square extends Shape {
 
 
     public Square(int sideLength) {
-        super(sideLength*sideLength, sideLength*4);
         this.sideLength = sideLength;
-
+        this.area = calculateArea();
+        this.circumference = calculateCircumference();
     }
 
 
-    public int getArea() {
-        return sideLength*sideLength;
+    private int calculateArea() {
+        return sideLength * sideLength;
     }
 
 
-    public int getCircumference() {
-        return sideLength*4;
-    }
-
-    @Override
-    public void calculateArea() {
-        System.out.println("Square area: " + getArea());
-    }
-
-    @Override
-    public void calculateCircumference() {
-        System.out.println("Square circumference: " + getCircumference());
+    private int calculateCircumference() {
+        return sideLength * 4;
     }
 }
+
+

@@ -6,10 +6,11 @@ public class Application {
         Square square = new Square(40);
         Rectangle rectangle = new Rectangle(10, 20);
 
-        square.calculateArea();
-        rectangle.calculateArea();
+        Shape[] shapes = new Shape[] {square, rectangle};
 
-        square.calculateCircumference();
-        rectangle.calculateCircumference();
+        for (int i = 0; i < shapes.length; i++) {
+            System.out.println(shapes[i].toString());
+        }
+
     }
 }
